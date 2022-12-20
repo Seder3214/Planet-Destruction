@@ -17,11 +17,7 @@ addNode("blank", {
 
 
 addLayer("tree-tab", {
-    tabFormat: {
-        "Destructive Power": {
-            embedLayer() {return 'p'},
-        },
-	},
+    tabFormat: [["tree", function() {return (layoutInfo.treeLayout ? layoutInfo.treeLayout : TREE_LAYERS)}]],
     previousTab: "",
     leftTab: true,
 })
