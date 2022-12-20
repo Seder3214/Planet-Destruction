@@ -1,5 +1,5 @@
 var layoutInfo = {
-    startTab: "p",
+    startTab: "none",
     startNavTab: "tree-tab",
 	showTree: true,
 
@@ -17,7 +17,11 @@ addNode("blank", {
 
 
 addLayer("tree-tab", {
-    tabFormat: [["tree", function() {return (layoutInfo.treeLayout ? layoutInfo.treeLayout : TREE_LAYERS)}]],
+    tabFormat: {
+        "Destructive Power": {
+            embedLayer() {return 'p'},
+        },
+	},
     previousTab: "",
     leftTab: true,
 })
